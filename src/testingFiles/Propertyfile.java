@@ -16,28 +16,21 @@ import org.testng.annotations.Test;
 
 public class Propertyfile {
 	public WebDriver driver =null;
-	File file =new File("C:\\Users\\Abhishek\\eclipse-workspace\\TestNGTutorial-1\\TestNGTutorial\\src\\testingFiles\\datadriven.properties");
-	Properties prop =new Properties();
 	
 
 	@Test
-	public void Login() throws InterruptedException 
+	public void Login() throws InterruptedException, IOException 
 	{
-		FileInputStream fis = null;
-		try {
-			fis = new FileInputStream(file);
-		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} 
+		if(driver==null)
+		{
+		File file =new File("C:\\Users\\Abhishek\\eclipse-workspace\\TestNGTutorial-1\\TestNGTutorial\\src\\testingFiles\\datadriven.properties");
+		Properties prop =new Properties();
 
-		try {
+		FileInputStream	fis = new FileInputStream(file);
+		
+	
 			prop.load(fis);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		
 
 	if(prop.getProperty("browser").equalsIgnoreCase("firefox"))
 	{
@@ -60,4 +53,5 @@ public class Propertyfile {
 
 	}
 	
+}
 }
