@@ -11,11 +11,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 public class Propertyfile {
-	public WebDriver driver =null;
+    public static Properties TestConfig=null;
+    
+    public static WebDriver driver=null;
+    public static EventFiringWebDriver usedriver=null;
+    //public static EventFiringWebDriver driverIE=null;
 	
 
 	@Test
@@ -50,6 +55,8 @@ public class Propertyfile {
 //	Thread.sleep(500);
 //	System.out.println(prop.getProperty("url"));
 //	System.out.println(prop.getProperty("browser"));
+
+//    usedriver = new EventFiringWebDriver(driver);
 
 	}
 	
